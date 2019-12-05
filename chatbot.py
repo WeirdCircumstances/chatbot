@@ -15,7 +15,6 @@ from stop_words import get_stop_words
 from termcolor import colored, cprint
 import nltk
 from nltk.stem import WordNetLemmatizer
-#from nltk.stem.snowball import GermanStemmer
 
 warnings.filterwarnings('ignore')
 
@@ -29,9 +28,9 @@ INDIGNITY_RESPONSES = ["Wir sollten nett zueinander sein.", "Wenn du meinst.", "
 
 # Für den ersten Start, ansonsten auskommentieren
 
-#nltk.download('popular', quiet=True) 
-#nltk.download('punkt') 
-#nltk.download('wordnet') 
+nltk.download('popular', quiet=True) 
+nltk.download('punkt') 
+nltk.download('wordnet') 
 
 
 # Corpus einlesen
