@@ -34,7 +34,6 @@ nltk.download('wordnet')
 
 
 # Corpus einlesen
-#with open('chatbot_de.txt','r', encoding='utf8', errors ='ignore') as text:
 with open('chatbot_en.txt','r', encoding='utf8', errors ='ignore') as text:
     raw = text.read().lower()
 
@@ -112,5 +111,4 @@ while(flag==True):
     else:
         flag=False
         print(colored("CODY: ", 'green', attrs=['bold']) + colored("Smell you later.", 'cyan'))    
-        
-        
+
