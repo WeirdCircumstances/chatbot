@@ -75,7 +75,8 @@ def response(user_response):
     flat.sort()
     req_tfidf = flat[-2]
     if(req_tfidf==0):
-        #robo_response= "[tfidf: "+str(round(req_tfidf,2))+"] "+robo_response+ "Sorry, das habe ich nicht verstanden :("
+        #robo_response= "[tfidf: "+str(round(req_tfidf,2))+"] "+robo_response+ "Tut mir leid, ich verstehe dich nicht."
+        robo_response= "[tfidf: "+str(round(req_tfidf,2))+"] "+robo_response+ "Sorry, das habe ich nicht verstanden :("
         return robo_response
     else:
         robo_response = "[tfidf: "+str(round(req_tfidf,2))+"] "+robo_response+sent_tokens[idx]
