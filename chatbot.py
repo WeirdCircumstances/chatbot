@@ -30,9 +30,7 @@ INDIGNITY_RESPONSES = ["Wir sollten nett zueinander sein.", "Wenn du meinst.", "
 
 nltk.download('popular', quiet=True) 
 nltk.download('punkt') 
-nltk.download('wordnet')
-# changes in dev
-
+nltk.download('wordnet') 
 
 # Corpus einlesen
 with open('chatbot_en.txt','r', encoding='utf8', errors ='ignore') as text:
@@ -64,8 +62,6 @@ def trivia(sentence):
             return random.choice(INDIGNITY_RESPONSES)
 
 
-
-
 # Antwort Erzeugung
 def response(user_response):
     stop_words = get_stop_words('english')
@@ -80,7 +76,7 @@ def response(user_response):
     req_tfidf = flat[-2]
     if(req_tfidf==0):
         #robo_response= "[tfidf: "+str(round(req_tfidf,2))+"] "+robo_response+ "Tut mir leid, ich verstehe dich nicht."
-        robo_response= "[tfidf: "+str(round(req_tfidf,2))+"] "+robo_response+ "Sorry, das habe ich nicht verstanden :'("
+        robo_response= "[tfidf: "+str(round(req_tfidf,2))+"] "+robo_response+ "Sorry, das habe ich nicht verstanden :("
         return robo_response
     else:
         robo_response = "[tfidf: "+str(round(req_tfidf,2))+"] "+robo_response+sent_tokens[idx]
