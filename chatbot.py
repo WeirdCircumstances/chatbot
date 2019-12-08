@@ -30,7 +30,9 @@ INDIGNITY_RESPONSES = ["Wir sollten nett zueinander sein.", "Wenn du meinst.", "
 
 nltk.download('popular', quiet=True) 
 nltk.download('punkt') 
-nltk.download('wordnet') 
+nltk.download('wordnet')
+# changes in dev
+
 
 # Corpus einlesen
 with open('chatbot_en.txt','r', encoding='utf8', errors ='ignore') as text:
@@ -60,6 +62,8 @@ def trivia(sentence):
             return random.choice(GREETING_RESPONSES)
         if word.lower() in INDIGNITY_INPUTS:
             return random.choice(INDIGNITY_RESPONSES)
+
+
 
 
 # Antwort Erzeugung
