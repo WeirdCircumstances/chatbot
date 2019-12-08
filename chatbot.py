@@ -32,7 +32,7 @@ nltk.download('popular', quiet=True)
 nltk.download('punkt') 
 nltk.download('wordnet') 
 
-#test
+#test3
 
 # Corpus einlesen
 with open('chatbot_en.txt','r', encoding='utf8', errors ='ignore') as text:
