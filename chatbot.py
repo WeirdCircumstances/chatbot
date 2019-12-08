@@ -36,8 +36,6 @@ nltk.download('wordnet')
 with open('chatbot_en.txt','r', encoding='utf8', errors ='ignore') as text:
     raw = text.read().lower()
 
-#test again
-
 # Tokenisierung
 # sent_tokens konvertiert in Liste von Sätzen
 sent_tokens = nltk.sent_tokenize(raw)
