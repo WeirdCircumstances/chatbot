@@ -94,7 +94,7 @@ flag=True
 clear = lambda: os.system('clear')
 clear()
 #print(colored("CODY: ", 'green', attrs=['bold']) + colored("\tHallo, meine Name ist CODY. Ich weiß eine Menge über Chatbots. Frag' mich einfach!\n\tWenn du aufhören willst, tippe 'Bye'.", 'cyan'))
-print(colored("CODY: ", 'green', attrs=['bold']) + colored("\tHi, my name is CODY. I want to learn a lot about chatbots and AI. Please train me to get better and better!\n\tTo end this chat, type 'Bye'.", 'cyan'))
+print(colored("CODY: ", 'green', attrs=['bold']) + colored("\tHi, my name is Andy. I want to help you. Please tell me your problems\n\tTo end this chat, type 'Bye'.", 'cyan'))
 while(flag==True):
     user_response = input()
     #stemmer = GermanStemmer()
