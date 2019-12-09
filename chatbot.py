@@ -19,18 +19,18 @@ from nltk.stem import WordNetLemmatizer
 warnings.filterwarnings('ignore')
 
 # Begrüßungen
-GREETING_INPUTS = ("hallo", "hi", "grüße", "tach", "was geht", "hey", "servus")
-GREETING_RESPONSES = ["hi", "hey", "gott zum gruße", "tach", "hallo", "Es freut mich, mit dir sprechen zu dürfen.", "Servus"]
+GREETING_INPUTS = ("hello", "hi", "greetings", "hey", "what's up", "good morning")
+GREETING_RESPONSES = ["Hi", "Hey", "Good morning", "Nice to meet you.", "Hello"]
 
 # Beleidigungen
-INDIGNITY_INPUTS = ("arsch", "sau", "depp", "doof", "dumm", "kacke")
-INDIGNITY_RESPONSES = ["Wir sollten nett zueinander sein.", "Wenn du meinst.", "Überleg mal, was du sagst.", "Das finde ich nicht nett.", "Du solltest sowas nicht sagen", "Ohje, du bist ja ein besonders netter Zeitgenosse..."]
+INDIGNITY_INPUTS = ("fuck", "ass", "idiot", "dumb", "shit")
+INDIGNITY_RESPONSES = ["We should communicate friendly.", "If you think so.", "Think twice before saying.", "That isn't nice.", "You shouldn't say something like that", "Oh, it seems you're a very friendly guy..."]
 
 # Für den ersten Start, ansonsten auskommentieren
-
+'''
 nltk.download('popular', quiet=True) 
 nltk.download('punkt') 
-nltk.download('wordnet')
+nltk.download('wordnet')'''
 # changes in dev
 
 
@@ -94,7 +94,7 @@ flag=True
 clear = lambda: os.system('clear')
 clear()
 #print(colored("CODY: ", 'green', attrs=['bold']) + colored("\tHallo, meine Name ist CODY. Ich weiß eine Menge über Chatbots. Frag' mich einfach!\n\tWenn du aufhören willst, tippe 'Bye'.", 'cyan'))
-print(colored("CODY: ", 'green', attrs=['bold']) + colored("\tHi, my name is CODY. I want to learn a lot about chatbots and AI. Please train me to get better and better!\n\tTo end this chat, type 'Bye'.", 'cyan'))
+print(colored("CODY: ", 'red', attrs=['bold']) + colored("\tHi, my name is CODY. I want to learn a lot about chatbots and AI. Please train me to get better and better!\n\tTo end this chat, type 'Bye'.", 'cyan'))
 while(flag==True):
     user_response = input()
     #stemmer = GermanStemmer()
@@ -103,15 +103,15 @@ while(flag==True):
     if(user_response!='bye'):
         if(user_response=='danke dir' or user_response=='danke' ):
             flag=False
-            print(colored("CODY: ", 'green', attrs=['bold']) + colored( "You are welcome...", 'cyan'))
+            print(colored("CODY: ", 'red', attrs=['bold']) + colored( "You are welcome...", 'cyan'))
         else:
             if(trivia(user_response)!=None):
-                print(colored("CODY: ", 'green', attrs=['bold']) + colored(trivia(user_response), 'cyan'))
+                print(colored("CODY: ", 'red', attrs=['bold']) + colored(trivia(user_response), 'cyan'))
             else:
-                print(colored("CODY: ", 'green', attrs=['bold']), end="")
-                print(colored(response(user_response), 'cyan'))
+                print(colored("CODY: ", 'red', attrs=['bold']), end="")
+                print(colored(response(user_response), 'green'))
                 sent_tokens.remove(user_response)
     else:
         flag=False
-        print(colored("CODY: ", 'green', attrs=['bold']) + colored("Smell you later.", 'cyan'))    
+        print(colored("CODY: ", 'red', attrs=['bold']) + colored("See you later.", 'cyan'))    
 
