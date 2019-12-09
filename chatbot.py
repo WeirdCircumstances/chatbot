@@ -69,8 +69,6 @@ def trivia(sentence):
             return random.choice(GREETING_RESPONSES)
         if word.lower() in INDIGNITY_INPUTS:
             return random.choice(INDIGNITY_RESPONSES)
-        if word.lower() in SADNESS_INPUTS:
-            return random.choice(SADNESS_RESPONSES)
 
 
 
