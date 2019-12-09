@@ -1,5 +1,5 @@
 '''
-CODY - TextBot
+Andy - TextBot
 A simple NLTK Text Chatbot for the CODE{affair} workshop 2019 
 based on an example script from Parul Pandey.
 '''
@@ -19,21 +19,24 @@ from nltk.stem import WordNetLemmatizer
 warnings.filterwarnings('ignore')
 
 # Begrüßungen
-GREETING_INPUTS = ("hallo", "hi", "grüße", "tach", "was geht", "hey", "servus")
+GREETING_INPUTS = ("hallo", "hi", "grüße", "tach", "was geht", "hey", "servus", "moin")
 GREETING_RESPONSES = ["hi", "hey", "gott zum gruße", "tach", "hallo", "Es freut mich, mit dir sprechen zu dürfen.", "Servus"]
 
 # Beleidigungen
 INDIGNITY_INPUTS = ("arsch", "sau", "depp", "doof", "dumm", "kacke")
-INDIGNITY_RESPONSES = ["Wir sollten nett zueinander sein.", "Wenn du meinst.", "Überleg mal, was du sagst.", "Das finde ich nicht nett.", "Du solltest sowas nicht sagen", "Ohje, du bist ja ein besonders netter Zeitgenosse..."]
+INDIGNITY_RESPONSES = ["Wir sollten nett zueinander sein.", "Wenn du meinst.", "Überleg mal, was du sagst.", "Das finde ich nicht nett.", "Du solltest sowas nicht sagen", "Ohje, du bist ja ein besonders netter Zeitgenosse...", "Ich hoffe du kriegst husten"]
 
 # Für den ersten Start, ansonsten auskommentieren
-
+'''
 nltk.download('popular', quiet=True) 
 nltk.download('punkt') 
-nltk.download('wordnet') 
+nltk.download('wordnet')
+'''
+# changes in dev
+
 
 # Corpus einlesen
-with open('chatbot_en.txt','r', encoding='utf8', errors ='ignore') as text:
+with open('chatbot_en_andy_1.txt','r', encoding='utf8', errors ='ignore') as text:
     raw = text.read().lower()
 
 # Tokenisierung
@@ -41,6 +44,7 @@ with open('chatbot_en.txt','r', encoding='utf8', errors ='ignore') as text:
 sent_tokens = nltk.sent_tokenize(raw)
 # word_tokens konvertiert in Liste von Worten (Wird nicht verwendet.)
 word_tokens = nltk.word_tokenize(raw)
+#print (word_tokens)
 
 # Vorverarbeitung (Preprocessing)
 lemmer = WordNetLemmatizer()
@@ -74,6 +78,7 @@ def response(user_response):
     flat = vals.flatten()
     flat.sort()
     req_tfidf = flat[-2]
+    #print(flat)
     if(req_tfidf==0):
         #robo_response= "[tfidf: "+str(round(req_tfidf,2))+"] "+robo_response+ "Tut mir leid, ich verstehe dich nicht."
         robo_response= "[tfidf: "+str(round(req_tfidf,2))+"] "+robo_response+ "Sorry, das habe ich nicht verstanden :("
@@ -86,11 +91,18 @@ def response(user_response):
 Ausgabe
 (Um die Konsolenausgabe übersichtlicher zu gestalten wird die Bibliothek termcolor benutzt)
 '''
+andy_print_color = "yellow"
 flag=True
 clear = lambda: os.system('clear')
 clear()
-#print(colored("CODY: ", 'green', attrs=['bold']) + colored("\tHallo, meine Name ist CODY. Ich weiß eine Menge über Chatbots. Frag' mich einfach!\n\tWenn du aufhören willst, tippe 'Bye'.", 'cyan'))
-print(colored("CODY: ", 'green', attrs=['bold']) + colored("\tHi, my name is CODY. I want to learn a lot about chatbots and AI. Please train me to get better and better!\n\tTo end this chat, type 'Bye'.", 'cyan'))
+#print(colored("Andy: ", andy_print_color, attrs=['bold']) + colored("\tHallo, meine Name ist Andy. Ich weiß eine Menge über Chatbots. Frag' mich einfach!\n\tWenn du aufhören willst, tippe 'Bye'.", 'cyan'))
+print(colored("Andy: ", andy_print_color, attrs=['bold']) + colored("\tHi I'm Andy. I want to help you. Please tell me your issue!\n\tTo end this conversation, type 'Bye'.", 'cyan'))
+user_input = input(colored("Name your favorite color!\n", "cyan"))
+if user_input in "grey red green yellow blue magenta cyan white":
+    andy_print_color = user_input
+    print(colored("Color changed!", "cyan"))
+else:
+    print(colored("Unfortenaly this isn't a color.", "cyan"))
 while(flag==True):
     user_response = input()
     #stemmer = GermanStemmer()
@@ -99,15 +111,15 @@ while(flag==True):
     if(user_response!='bye'):
         if(user_response=='danke dir' or user_response=='danke' ):
             flag=False
-            print(colored("CODY: ", 'green', attrs=['bold']) + colored( "You are welcome...", 'cyan'))
+            print(colored("Andy: ", andy_print_color, attrs=['bold']) + colored( "You are welcome...", 'cyan'))
         else:
             if(trivia(user_response)!=None):
-                print(colored("CODY: ", 'green', attrs=['bold']) + colored(trivia(user_response), 'cyan'))
+                print(colored("Andy: ", andy_print_color, attrs=['bold']) + colored(trivia(user_response), 'cyan'))
             else:
-                print(colored("CODY: ", 'green', attrs=['bold']), end="")
+                print(colored("Andy: ", andy_print_color, attrs=['bold']), end="")
                 print(colored(response(user_response), 'cyan'))
                 sent_tokens.remove(user_response)
     else:
         flag=False
-        print(colored("CODY: ", 'green', attrs=['bold']) + colored("Smell you later.", 'cyan'))    
+        print(colored("Andy: ", andy_print_color, attrs=['bold']) + colored("Smell you later.", 'cyan'))    
 
