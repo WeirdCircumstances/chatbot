@@ -24,7 +24,7 @@ GREETING_INPUTS = ("hello", "hi", "Good Day", "Whats Up", "greedings", "hey")
 GREETING_RESPONSES = ["hi", "hey", "hello", "Nice to meet you"]
 
 # Beleidigungen
-INDIGNITY_INPUTS = ("idiot", "fuck", "dumd", "shit", "asshole")
+INDIGNITY_INPUTS = ("idiot", "fuck", "dumb", "shit", "asshole")
 INDIGNITY_RESPONSES = ["We sould be nice to each other", "you shouldn't say somthing like that", "this isn't very nice", " don't say this", "Oh what a nice Guy"]
 
 # Witze
