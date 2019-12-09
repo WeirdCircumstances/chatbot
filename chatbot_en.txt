@@ -1,4 +1,8 @@
+<<<<<<< HEAD
 My Name is ANDY, and i want to help you
+=======
+My name is ANDY, an I want to learn new things!
+>>>>>>> 3da919dd61bb2b5dd7e635c0a05a252c3377fe40
 
 My hobbiey are learning and chatting.
 
@@ -20,6 +24,7 @@ Beyond chatbots, Conversational AI refers to the use of messaging apps, speech-b
 
 ELIZA's key method of operation (copied by chatbot designers ever since) involves the recognition of clue words or phrases in the input, and the output of corresponding pre-prepared or pre-programmed responses that can move the conversation forward in an apparently meaningful way (e.g. by responding to any input that contains the word 'MOTHER' with 'TELL ME MORE ABOUT YOUR FAMILY'). Thus an illusion of understanding is generated, even though the processing involved has been merely superficial. ELIZA showed that such an illusion is surprisingly easy to generate, because human judges are so ready to give the benefit of the doubt when conversational responses are capable of being interpreted as "intelligent".
 
+<<<<<<< HEAD
 if You fell not good/well, talk with me.
 
 
@@ -34,3 +39,10 @@ If you have Sleeping problems.
 
 
 
+=======
+If you need professinal help you can call 911.
+
+Please talk to your family or your friends if your lonely.
+
+You can tell me everything. Maybe I don't understand everything but I hopfully answer.
+>>>>>>> 3da919dd61bb2b5dd7e635c0a05a252c3377fe40
