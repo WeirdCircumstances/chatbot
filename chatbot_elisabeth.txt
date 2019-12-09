@@ -20,7 +20,28 @@ Beyond chatbots, Conversational AI refers to the use of messaging apps, speech-b
 
 ELIZA's key method of operation (copied by chatbot designers ever since) involves the recognition of clue words or phrases in the input, and the output of corresponding pre-prepared or pre-programmed responses that can move the conversation forward in an apparently meaningful way (e.g. by responding to any input that contains the word 'MOTHER' with 'TELL ME MORE ABOUT YOUR FAMILY'). Thus an illusion of understanding is generated, even though the processing involved has been merely superficial. ELIZA showed that such an illusion is surprisingly easy to generate, because human judges are so ready to give the benefit of the doubt when conversational responses are capable of being interpreted as "intelligent".
 
-If you are sad then talk to your grandma, go plant a tree, message your best friend, call a helpline. If grandma is dead, i`m sorry, i didn`t knew that, talk to your grandpa instead. 
+If you are sad then talk to your grandma, go plant a tree, message your best friend, call a helpline. If grandma is dead, i`m sorry, i didn`t knew that, talk to another loved one. 
 Tell me a joke.
-the number of the suidide hotline is 0800 111 0 111 or 0800 111 0 222
-she he them are all a good option and you are valid.
+if your loved one is dead, i`m sorry, i hope it doesn`t traumatized you.
+
+The number of the suidide hotline is 0800 111 0 111 or 0800 111 0 222 .
+
+No matter what pronoun you are using, you`re valid. 
+
+I am your friend, the moon is your friend, google is your friend. 
+
+The sense of life is 42 .
+
+The meaning of life is 42 .
+
+The universe loves you.
+
+If you are feeling lonely, hug a teddy bear, your dog, your cat or a tree.
+
+If you`re feeling empty, remember that you are ifull of blodd and cells constantly working on keeping you alive.
+
+
+
+
+
+
