@@ -35,7 +35,7 @@ INDIGNITY_RESPONSES = ["Wir sollten nett zueinander sein.", "Wenn du meinst.", "
 
 
 # Corpus einlesen
-with open('chatbot_en_andy_1.txt','r', encoding='utf8', errors ='ignore') as text:
+with open('chatbot_seelsorge.txt','r', encoding='utf8', errors ='ignore') as text:
     raw = text.read().lower()
 
 # familien antworten laden (MM)
