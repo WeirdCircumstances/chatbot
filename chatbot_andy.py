@@ -36,7 +36,7 @@ nltk.download('wordnet')
 
 
 # Corpus einlesen
-with open('chatbot_en_andy_1.txt','r', encoding='utf8', errors ='ignore') as text:
+with open('chatbot_alles.txt','r', encoding='utf8', errors ='ignore') as text:
     raw = text.read().lower()
 
 # Tokenisierung
