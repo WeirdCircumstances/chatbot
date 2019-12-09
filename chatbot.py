@@ -19,12 +19,16 @@ from nltk.stem import WordNetLemmatizer
 warnings.filterwarnings('ignore')
 
 # Begrüßungen
-GREETING_INPUTS = ("hallo", "hi", "grüße", "tach", "was geht", "hey", "servus")
-GREETING_RESPONSES = ["hi", "hey", "gott zum gruße", "tach", "hallo", "Es freut mich, mit dir sprechen zu dürfen.", "Servus"]
+GREETING_INPUTS = ("hello", "hi", "Good Day", "Whats Up", "greedings", "hey")
+GREETING_RESPONSES = ["hi", "hey", "hello", "Nice to meet you"]
 
 # Beleidigungen
-INDIGNITY_INPUTS = ("arsch", "sau", "depp", "doof", "dumm", "kacke")
-INDIGNITY_RESPONSES = ["Wir sollten nett zueinander sein.", "Wenn du meinst.", "Überleg mal, was du sagst.", "Das finde ich nicht nett.", "Du solltest sowas nicht sagen", "Ohje, du bist ja ein besonders netter Zeitgenosse..."]
+INDIGNITY_INPUTS = ("idiot", "fuck", "dumd", "shit", "asshole")
+INDIGNITY_RESPONSES = ["We sould be nice to each other", "you shouldn't say somthing like that", "this isn't very nice", " don't say this", "Oh what a nice Guy"]
+
+# Witze
+SADNESS_INPUTS = ("sad")
+SADNESS_RESPONSES = ["My Musical knowledge is so poor i thought kanye west was a railway station ans lena del a holiday destination.", "Two fish in a tank. One turns to the other and says: „Do you know how to drive this?"]
 
 # Für den ersten Start, ansonsten auskommentieren
 
@@ -62,6 +66,8 @@ def trivia(sentence):
             return random.choice(GREETING_RESPONSES)
         if word.lower() in INDIGNITY_INPUTS:
             return random.choice(INDIGNITY_RESPONSES)
+        if word.lower() in SADNESS_INPUTS:
+            return random.choice(SADNESS_RESPONSES)
 
 
 
@@ -93,8 +99,8 @@ Ausgabe
 flag=True
 clear = lambda: os.system('clear')
 clear()
-#print(colored("CODY: ", 'green', attrs=['bold']) + colored("\tHallo, meine Name ist CODY. Ich weiß eine Menge über Chatbots. Frag' mich einfach!\n\tWenn du aufhören willst, tippe 'Bye'.", 'cyan'))
-print(colored("CODY: ", 'green', attrs=['bold']) + colored("\tHi, my name is CODY. I want to learn a lot about chatbots and AI. Please train me to get better and better!\n\tTo end this chat, type 'Bye'.", 'cyan'))
+#print(colored("ANDY: ", 'green', attrs=['bold']) + colored("\tHallo, meine Name ist ANDY. Ich weiß eine Menge über Chatbots. Frag' mich einfach!\n\tWenn du aufhören willst, tippe 'Bye'.", 'cyan'))
+print(colored("ANDY: ", 'green', attrs=['bold']) + colored("\tHi, my name is ANDY. I want to help you!\n\tTo end this chat, type 'Bye'.", 'cyan'))
 while(flag==True):
     user_response = input()
     #stemmer = GermanStemmer()
@@ -103,15 +109,15 @@ while(flag==True):
     if(user_response!='bye'):
         if(user_response=='danke dir' or user_response=='danke' ):
             flag=False
-            print(colored("CODY: ", 'green', attrs=['bold']) + colored( "You are welcome...", 'cyan'))
+            print(colored("ANDY: ", 'green', attrs=['bold']) + colored( "You are welcome...", 'cyan'))
         else:
             if(trivia(user_response)!=None):
-                print(colored("CODY: ", 'green', attrs=['bold']) + colored(trivia(user_response), 'cyan'))
+                print(colored("ANDY: ", 'green', attrs=['bold']) + colored(trivia(user_response), 'cyan'))
             else:
-                print(colored("CODY: ", 'green', attrs=['bold']), end="")
+                print(colored("ANDY: ", 'green', attrs=['bold']), end="")
                 print(colored(response(user_response), 'cyan'))
                 sent_tokens.remove(user_response)
     else:
         flag=False
-        print(colored("CODY: ", 'green', attrs=['bold']) + colored("Smell you later.", 'cyan'))    
+        print(colored("ANDY: ", 'green', attrs=['bold']) + colored("Smell you later.", 'cyan'))    
 
