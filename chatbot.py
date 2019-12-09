@@ -27,10 +27,10 @@ INDIGNITY_INPUTS = ("fuck", "ass", "idiot", "dumb", "shit")
 INDIGNITY_RESPONSES = ["We should communicate friendly.", "If you think so.", "Think twice before saying.", "That isn't nice.", "You shouldn't say something like that", "Oh, it seems you're a very friendly guy..."]
 
 # Für den ersten Start, ansonsten auskommentieren
-'''
-nltk.download('popular', quiet=True) 
-nltk.download('punkt') 
-nltk.download('wordnet')'''
+#'''
+#nltk.download('popular', quiet=True) 
+#nltk.download('punkt') 
+#nltk.download('wordnet')'''
 # changes in dev
 
 
@@ -38,9 +38,15 @@ nltk.download('wordnet')'''
 with open('chatbot_en.txt','r', encoding='utf8', errors ='ignore') as text:
     raw = text.read().lower()
 
+# familien antworten laden (MM)
+with open('chatbot_family.txt','r', encoding='utf8', errors ='ignore') as text:
+    raw_fam = text.read().lower()
+
 # Tokenisierung
 # sent_tokens konvertiert in Liste von Sätzen
 sent_tokens = nltk.sent_tokenize(raw)
+# familien antworten hinzufuegen (MM)
+sent_tokens.extend(nltk.sent_tokenize(raw_fam))
 # word_tokens konvertiert in Liste von Worten (Wird nicht verwendet.)
 word_tokens = nltk.word_tokenize(raw)
 
@@ -94,11 +100,9 @@ flag=True
 clear = lambda: os.system('clear')
 clear()
 #print(colored("CODY: ", 'green', attrs=['bold']) + colored("\tHallo, meine Name ist CODY. Ich weiß eine Menge über Chatbots. Frag' mich einfach!\n\tWenn du aufhören willst, tippe 'Bye'.", 'cyan'))
-<<<<<<< HEAD
+
 print(colored("CODY: ", 'green', attrs=['bold']) + colored("\tHi, my name is Andy. I want to help you. Please tell me your problems\n\tTo end this chat, type 'Bye'.", 'cyan'))
-=======
-print(colored("CODY: ", 'red', attrs=['bold']) + colored("\tHi, my name is CODY. I want to learn a lot about chatbots and AI. Please train me to get better and better!\n\tTo end this chat, type 'Bye'.", 'cyan'))
->>>>>>> 19e74aa744da6dc179cc63fe9602b5d2a924de6b
+
 while(flag==True):
     user_response = input()
     #stemmer = GermanStemmer()
